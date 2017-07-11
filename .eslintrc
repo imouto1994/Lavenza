@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "fbjs-opensource",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {},
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "jsx": true
+  },
+  "plugins": ["react", "import"],
+  "settings": {
+    "react": {
+      "pragma": "h"
+    }
+  }
+}

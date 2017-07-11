@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": { "node": "7.4.0" },
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
+    "stage-0",
+    "preact"
+  ],
+  "plugins": [
+    ["transform-runtime", { "polyfill": false, "regenerator": false }]
+  ]
+}

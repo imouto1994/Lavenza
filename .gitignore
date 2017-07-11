@@ -1,0 +1,9 @@
+# Node Modules
+node_modules
+
+# Build Folder
+build
+
+# Cache Folders
+.cache-loader-renderer
+.cache-loader-electron
