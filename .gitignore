@@ -10,3 +10,12 @@ build
 
 # Flow Type
 flow-typed
+
+# Python
+Include
+Lib
+Scripts
+tcl
+
+# Quick Translator
+QuickTranslator
