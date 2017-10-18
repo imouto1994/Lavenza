@@ -1,11 +1,18 @@
-import { h, Component } from "preact";
-import { Provider } from "preact-redux";
+// @flow
+import type { Store } from "redux";
+
+import React, { PureComponent } from "react";
+import { Provider } from "react-redux";
 
 import App from "../App";
 
-export default class Root extends Component {
-  render(props) {
-    const { store } = props;
+type Props = {
+  store: Store<*, *>,
+};
+
+export default class Root extends PureComponent<Props> {
+  render() {
+    const { store } = this.props;
     return (
       <Provider store={store}>
         <App />

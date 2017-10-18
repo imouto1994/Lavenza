@@ -7,3 +7,6 @@ build
 # Cache Folders
 .cache-loader-renderer
 .cache-loader-electron
+
+# Flow Type
+flow-typed

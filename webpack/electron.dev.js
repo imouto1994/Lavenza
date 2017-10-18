@@ -52,5 +52,4 @@ module.exports = {
     __dirname: false,
     setImmediate: false,
   },
-  externals: ["edge-js"],
 };

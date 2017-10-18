@@ -6,5 +6,5 @@ const textListSelector = function(state) {
 };
 
 export const latestTextSelector = createSelector(textListSelector, list =>
-  last(list),
+  last(list)
 );

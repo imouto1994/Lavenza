@@ -39,7 +39,7 @@ module.exports = {
             options: {
               cacheDirectory: path.resolve(
                 __dirname,
-                "../.cache-loader-renderer",
+                "../.cache-loader-renderer"
               ),
             },
           },

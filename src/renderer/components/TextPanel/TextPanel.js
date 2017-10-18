@@ -1,14 +1,16 @@
-import { h, Component } from "preact";
+// @flow
 
-class TextPanel extends Component {
-  render(props) {
-    const { latestText } = props;
+import React, { PureComponent } from "react";
 
-    return (
-      <div>
-        {latestText}
-      </div>
-    );
+type Props = {
+  latestText: string,
+};
+
+class TextPanel extends PureComponent<Props> {
+  render() {
+    const { latestText } = this.props;
+
+    return <div>{latestText}</div>;
   }
 }
 

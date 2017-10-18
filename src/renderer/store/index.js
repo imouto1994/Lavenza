@@ -33,7 +33,7 @@ export default function configureStore(initialState) {
   const store = createStore(
     enableBatching(rootReducer),
     initialState,
-    compose(applyMiddleware(...middlewares), batchedSubscribe(notifyHandler)),
+    compose(applyMiddleware(...middlewares), batchedSubscribe(notifyHandler))
   );
 
   store.runSaga = sagaMiddleware.run;

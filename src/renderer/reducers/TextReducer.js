@@ -20,7 +20,7 @@ function handleRetrieveNewText(state, action) {
 
       return copiedList;
     },
-    state,
+    state
   );
 }
 

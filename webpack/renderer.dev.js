@@ -65,6 +65,31 @@ module.exports = {
         ],
         include: [path.resolve(__dirname, "../src/")],
       },
+      // Node_modules css
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "cache-loader",
+            options: {
+              cacheDirectory: path.resolve(
+                __dirname,
+                "../.cache-loader-renderer"
+              ),
+            },
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "postcss-loader",
+          },
+        ],
+        include: [path.resolve(__dirname, "../node_modules/")],
+      },
     ],
   },
   plugins: [
@@ -80,7 +105,6 @@ module.exports = {
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
     }),
   ],
-  externals: ["edge-js"],
   performance: false,
   node: {
     console: false,
