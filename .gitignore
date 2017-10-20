@@ -16,6 +16,8 @@ Include
 Lib
 Scripts
 tcl
+.Python
+bin
 
 # Quick Translator
 QuickTranslator
