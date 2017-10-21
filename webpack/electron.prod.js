@@ -45,8 +45,6 @@ module.exports = {
 
     // Optimize Plugins
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
   ],
   node: {
     console: false,

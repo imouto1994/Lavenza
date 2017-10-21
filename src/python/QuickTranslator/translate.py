@@ -12,7 +12,7 @@ clr.AddReference("TranslatorEngine")
 from TranslatorEngine import TranslatorEngine
 TranslatorEngine.LoadDictionaries()
 
-
 def translate(str):
     string = TranslatorEngine.ChineseToVietPhraseOneMeaningForBatch(
-        str, 0, 2, True)
+        str, 0, 1, True)
+    return string

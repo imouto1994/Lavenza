@@ -17,7 +17,12 @@ app.on("window-all-closed", appClosedHandler);
  * Handler when app is ready
  */
 function appReadyHandler() {
-  const htmlFilePath = path.resolve(__dirname, "../renderer/index.html");
+  let htmlFilePath;
+  if (process.env.NODE_ENV === "production") {
+    htmlFilePath = path.resolve(__dirname, "./index.html");
+  } else {
+    htmlFilePath = path.resolve(__dirname, "../renderer/index.html");
+  }
 
   // Initialize browser window
   mainWindow = new BrowserWindow({
@@ -27,7 +32,13 @@ function appReadyHandler() {
     // transparent: true,
     width: 600,
     height: 500,
+    webPreferences: {
+      devTools: process.env.NODE_ENV !== "production",
+    },
   });
+  if (process.env.NODE_ENV === "production") {
+    mainWindow.setMenu(null);
+  }
 
   // Load URL
   mainWindow.loadURL(`file://${htmlFilePath}`);

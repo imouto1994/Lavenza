@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BabiliPlugin = require("babili-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const ASSETS_PATH = path.resolve(__dirname, "../build");
 
@@ -27,35 +28,54 @@ module.exports = {
       // CSS Modules
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader",
-            options: {
-              singleton: true,
+        use: ExtractTextPlugin.extract({
+          fallback: [
+            {
+              loader: "style-loader",
+              options: {
+                singleton: true,
+              },
             },
-          },
-          {
-            loader: "cache-loader",
-            options: {
-              cacheDirectory: path.resolve(
-                __dirname,
-                "../.cache-loader-renderer"
-              ),
+          ],
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                importLoaders: 1,
+                ignoreOrder: true,
+                localIdentName: "[name]__[local]___[hash:base64:5]",
+              },
             },
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]__[local]___[hash:base64:5]",
+            {
+              loader: "postcss-loader",
             },
-          },
-          {
-            loader: "postcss-loader",
-          },
-        ],
+          ],
+        }),
         include: [path.resolve(__dirname, "../src/")],
+      },
+      // Node_modules css
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: [
+            {
+              loader: "style-loader",
+              options: {
+                singleton: true,
+              },
+            },
+          ],
+          use: [
+            {
+              loader: "css-loader",
+            },
+            {
+              loader: "postcss-loader",
+            },
+          ],
+        }),
+        include: [path.resolve(__dirname, "../node_modules/")],
       },
     ],
   },
@@ -65,6 +85,8 @@ module.exports = {
 
     // Uglify by using Babili
     new BabiliPlugin(),
+
+    new ExtractTextPlugin("[name]-[hash].css"),
 
     // Global variables definition
     new webpack.DefinePlugin({
@@ -79,8 +101,6 @@ module.exports = {
 
     // Optimize Plugins
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
 
     // Html Webpack Plugin
     new HtmlWebpackPlugin({

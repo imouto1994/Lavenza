@@ -12,12 +12,17 @@ build
 flow-typed
 
 # Python
-Include
-Lib
-Scripts
-tcl
-.Python
-bin
+/Include
+/Lib
+/Scripts
+/tcl
+/.Python
+/bin
+__pycache__
 
 # Quick Translator
-/QuickTranslator
+QuickTranslator.log
+Names2History.txt
+
+# Visual Code
+/.vscode

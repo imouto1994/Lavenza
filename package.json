@@ -7,23 +7,25 @@
   "author": "Trong Nhan <imouto1994@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev-renderer": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/renderer.dev.js",
-    "build-renderer": "cross-env NODE_ENV=production webpack --config ./webpack/renderer.prod.js",
-    "dev-main": "cross-env NODE_ENV=development electron ./src/electron/index.js",
-    "build-main": "",
+    "dev-renderer":
+      "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/renderer.dev.js",
+    "build-renderer":
+      "cross-env NODE_ENV=production webpack --config ./webpack/renderer.prod.js",
+    "dev-main":
+      "cross-env NODE_ENV=development electron ./src/electron/index.js",
+    "build-main":
+      "cross-env NODE_ENV=production webpack --config ./webpack/electron.prod.js & electron ./build/electron.js",
     "build": "",
     "lint": "eslint src webpack index.js --fix",
     "format": "prettier --write '{src,webpack}/**/*.js'",
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint-check":
+      "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "precommit": "lint-staged",
     "flow": "flow",
     "flow-install": "flow-typed install"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["prettier --write", "git add"]
   },
   "devDependencies": {
     "autoprefixer": "7.1.4",
