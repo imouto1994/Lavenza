@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -6,9 +6,9 @@ app = Flask(__name__)
 @app.route('/quickTranslator')
 def api_quick_translator():
     if 'text' in request.args:
-        return "FUCK"
+        return jsonify({"text": "Fuck"})
     else:
-        return "Hello, World!"
+        return jsonify({"text": "Hello, World!"})
 
 
 if __name__ == '__main__':

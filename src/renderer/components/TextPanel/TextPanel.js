@@ -3,14 +3,14 @@
 import React, { PureComponent } from "react";
 
 type Props = {
-  latestText: string,
+  text: string,
 };
 
 class TextPanel extends PureComponent<Props> {
   render() {
-    const { latestText } = this.props;
+    const { text } = this.props;
 
-    return <div>{latestText}</div>;
+    return <div>{text}</div>;
   }
 }
 

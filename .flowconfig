@@ -1,5 +1,11 @@
 [ignore]
 
+.*/node_modules/fbjs/.*
+.*/node_modules/flow-remove-types/.*
+.*/node_modules/flow-coverage-report/.*
+.*/node_modules/draft-js/.*
+.*/node_modules/rc-editor-core/.*
+
 [include]
 
 [libs]
