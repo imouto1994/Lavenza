@@ -76,6 +76,7 @@ export default class App extends PureComponent<Props> {
         onClick={this.handleClick}
         selectedKeys={[currentMainTab]}
         mode="horizontal"
+        style={{ flex: "0 0 auto " }}
       >
         <Menu.Item key={MAIN_TABS[0]}>{"Chi -> Vie"}</Menu.Item>
         <Menu.Item key={MAIN_TABS[1]}>{"Jpn -> Vie"}</Menu.Item>

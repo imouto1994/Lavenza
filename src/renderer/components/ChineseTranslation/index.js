@@ -9,16 +9,19 @@ import {
   latestChineseTextOriginalSelector,
   latestChineseTextTranslatedSelector,
 } from "../../selectors/TextSelectors";
+import { panelTransparencySelector } from "../../selectors/UISelectors";
 
 type MappedProps = {
   original: string,
   translated: string,
+  panelTransparency: number,
 };
 
 function mapStateToProps(state: State): MappedProps {
   return {
     original: latestChineseTextOriginalSelector(state),
     translated: latestChineseTextTranslatedSelector(state),
+    panelTransparency: panelTransparencySelector(state),
   };
 }
 

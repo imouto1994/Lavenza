@@ -1,0 +1,11 @@
+.translation {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.panel {
+  flex: 1;
+  outline: 1px solid #bdc3c7;
+  min-width: 300px;
+}

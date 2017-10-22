@@ -37,3 +37,19 @@ export function toggleMenuBar(): ToggleMenuBarAction {
     type: "TOGGLE_MENU_BAR",
   };
 }
+
+export type ChangeTransparencyAction = {
+  type: "CHANGE_TRANSPARENCY",
+  payload: {
+    value: number,
+  },
+};
+
+export function changeTransparency(value: number): ChangeTransparencyAction {
+  return {
+    type: "CHANGE_TRANSPARENCY",
+    payload: {
+      value,
+    },
+  };
+}

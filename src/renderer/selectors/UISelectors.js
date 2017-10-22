@@ -14,3 +14,7 @@ export const showTitleBarSelector = function(state: State): boolean {
 export const showMenuBarSelector = function(state: State): boolean {
   return state.UI.showMenuBar;
 };
+
+export const panelTransparencySelector = function(state: State): number {
+  return state.UI.panelTransparency;
+};
