@@ -27,7 +27,7 @@ function appReadyHandler() {
   // Initialize browser window
   mainWindow = new BrowserWindow({
     show: false,
-    // frame: false,
+    frame: false,
     toolbar: false,
     // transparent: true,
     width: 600,

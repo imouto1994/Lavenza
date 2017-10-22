@@ -17,3 +17,23 @@ export function switchTab(tabKey: MainTab): SwitchTabAction {
     },
   };
 }
+
+export type ToggleTitleBarAction = {
+  type: "TOGGLE_TITLE_BAR",
+};
+
+export function toggleTitleBar(): ToggleTitleBarAction {
+  return {
+    type: "TOGGLE_TITLE_BAR",
+  };
+}
+
+export type ToggleMenuBarAction = {
+  type: "TOGGLE_MENU_BAR",
+};
+
+export function toggleMenuBar(): ToggleMenuBarAction {
+  return {
+    type: "TOGGLE_MENU_BAR",
+  };
+}
